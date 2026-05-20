@@ -24,6 +24,15 @@
     document.getElementById('navMenu').classList.toggle('open');
   });
 
+  /* ===== YouTube facade — show thumbnail, load iframe on click ===== */
+  document.querySelectorAll('.yt-facade').forEach(el => {
+    el.addEventListener('click', () => {
+      const vid = el.dataset.vid;
+      el.innerHTML = '<iframe src="https://www.youtube.com/embed/'+vid+'?autoplay=1" allowfullscreen allow="autoplay"></iframe>';
+      el.classList.remove('yt-facade');
+    });
+  });
+
   /* ===== Solat tabs ===== */
   const solatTabs = document.querySelectorAll('.solat-tab');
   const solatPanes = document.querySelectorAll('.solat-pane');

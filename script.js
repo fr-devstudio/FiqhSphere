@@ -27,6 +27,7 @@
   /* ===== YouTube facade — show thumbnail, load iframe on click ===== */
   document.querySelectorAll('.yt-facade').forEach(el => {
     el.addEventListener('click', () => {
+      pauseMusic();
       const vid = el.dataset.vid;
       el.innerHTML = '<iframe src="https://www.youtube.com/embed/'+vid+'?autoplay=1" allowfullscreen allow="autoplay"></iframe>';
       el.classList.remove('yt-facade');
@@ -204,8 +205,76 @@
   /* ===== Quiz platform external launchers ===== */
   document.querySelectorAll('.quiz-platform').forEach(p => p.addEventListener('click', () => {
     const url = p.dataset.url;
-    if(url){ window.open(url, '_blank', 'noopener'); }
+    if(url){
+      pauseMusic();
+      window.open(url, '_blank', 'noopener');
+    }
   }));
+
+  /* ===== Buku Nota — pause music when opening slide notes ===== */
+  document.querySelectorAll('.nota-btn').forEach(a => a.addEventListener('click', () => {
+    pauseMusic();
+  }));
+
+  /* ===== Background Music ===== */
+  const bgAudio = document.getElementById('bgAudio');
+  const musicBtn = document.getElementById('musicBtn');
+  let musicStarted = false;
+
+  bgAudio.volume = 0.25;
+
+  function pauseMusic(){
+    if(!bgAudio.paused){
+      bgAudio.pause();
+      musicBtn.classList.add('muted');
+    }
+  }
+
+  function startMusic(){
+    if(musicStarted) return;
+    bgAudio.play().then(() => {
+      musicStarted = true;
+      musicBtn.classList.remove('muted');
+    }).catch(() => {});
+  }
+
+  function toggleMusic(){
+    if(!musicStarted){
+      startMusic();
+      return;
+    }
+    if(bgAudio.paused){
+      bgAudio.play();
+      musicBtn.classList.remove('muted');
+    } else {
+      bgAudio.pause();
+      musicBtn.classList.add('muted');
+    }
+  }
+
+  musicBtn.addEventListener('click', toggleMusic);
+
+  // Attempt autoplay on load; if blocked, start on first user interaction
+  window.addEventListener('load', () => {
+    bgAudio.play().then(() => {
+      musicStarted = true;
+      musicBtn.classList.remove('muted');
+      setTimeout(() => musicBtn.classList.add('pulse'), 500);
+    }).catch(() => {
+      // Autoplay blocked — wait for user gesture
+      musicBtn.classList.add('muted');
+      musicBtn.classList.add('pulse');
+      const startOnInteract = () => {
+        startMusic();
+        document.removeEventListener('click', startOnInteract);
+        document.removeEventListener('keydown', startOnInteract);
+        document.removeEventListener('touchstart', startOnInteract);
+      };
+      document.addEventListener('click', startOnInteract);
+      document.addEventListener('keydown', startOnInteract);
+      document.addEventListener('touchstart', startOnInteract);
+    });
+  });
 
   /* ===== Scroll reveal ===== */
   const io = new IntersectionObserver(entries => {

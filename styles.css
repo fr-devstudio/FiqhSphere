@@ -1070,3 +1070,102 @@ footer{
   .qr-score{font-size:54px}
   .quiz-progress-bar{flex-wrap:wrap}
 }
+
+/* ===== Floating Music Button ===== */
+.music-btn{
+  position:fixed;
+  bottom:28px;
+  right:28px;
+  z-index:9999;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:var(--emerald-800);
+  box-shadow:0 4px 20px rgba(5,61,44,.35), 0 2px 8px rgba(5,61,44,.2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  border:2px solid rgba(220,192,122,.35);
+  transition:transform .2s, box-shadow .2s, background .2s;
+  color:#fff;
+  gap:0;
+  overflow:hidden;
+  flex-direction:column;
+}
+.music-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 28px rgba(5,61,44,.4), 0 3px 12px rgba(5,61,44,.25);
+  background:var(--emerald-700);
+}
+.music-btn.muted{
+  background:var(--ink-mute);
+  border-color:rgba(255,255,255,.15);
+}
+.music-btn svg{
+  position:absolute;
+  transition:opacity .2s;
+}
+.music-btn.muted .music-icon-on{ opacity:0; }
+.music-btn.muted .music-icon-off{ display:block !important; opacity:1; }
+.music-btn:not(.muted) .music-icon-off{ opacity:0; display:block !important; }
+.music-btn:not(.muted) .music-icon-on{ opacity:1; }
+
+/* Sound wave bars */
+.music-waves{
+  position:absolute;
+  bottom:7px;
+  display:flex;
+  align-items:flex-end;
+  gap:2px;
+  height:8px;
+  opacity:.7;
+  transition:opacity .3s;
+}
+.music-waves span{
+  display:block;
+  width:3px;
+  border-radius:2px;
+  background:#dcc07a;
+  animation:wave-bar 1s ease-in-out infinite;
+  transform-origin:bottom;
+}
+.music-waves span:nth-child(1){ height:8px; animation-delay:0s; }
+.music-waves span:nth-child(2){ height:5px; animation-delay:.2s; }
+.music-waves span:nth-child(3){ height:8px; animation-delay:.4s; }
+.music-btn.muted .music-waves{ opacity:0; }
+.music-btn.muted .music-waves span{ animation:none; }
+
+@keyframes wave-bar{
+  0%,100%{ transform:scaleY(1); }
+  50%{ transform:scaleY(.35); }
+}
+
+/* Tooltip label on hover */
+.music-btn::before{
+  content:'Muzik Latar';
+  position:absolute;
+  right:calc(100% + 10px);
+  top:50%;
+  transform:translateY(-50%);
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:12px;
+  font-weight:500;
+  padding:5px 10px;
+  border-radius:8px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s;
+}
+.music-btn:hover::before{ opacity:1; }
+
+/* Pulse ring on first load (attract attention) */
+@keyframes pulse-ring{
+  0%{ box-shadow:0 0 0 0 rgba(16,133,97,.5), 0 4px 20px rgba(5,61,44,.35); }
+  70%{ box-shadow:0 0 0 14px rgba(16,133,97,0), 0 4px 20px rgba(5,61,44,.35); }
+  100%{ box-shadow:0 0 0 0 rgba(16,133,97,0), 0 4px 20px rgba(5,61,44,.35); }
+}
+.music-btn.pulse{ animation:pulse-ring 1.8s ease-out 3; }

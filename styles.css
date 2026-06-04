@@ -189,6 +189,8 @@ main{min-height:80vh}
   box-shadow:inset 0 0 0 1.5px var(--emerald-800);
 }
 .btn-ghost:hover{background:var(--emerald-800);color:var(--paper)}
+.hero-cta .btn-ghost{background:linear-gradient(135deg,var(--gold-600),var(--gold-700));color:#fff;box-shadow:0 4px 16px rgba(180,130,30,.30)}
+.hero-cta .btn-ghost:hover{background:linear-gradient(135deg,var(--gold-700),var(--gold-800,#b8860b));color:#fff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(180,130,30,.40)}
 .btn-gold{
   background:linear-gradient(135deg,var(--gold-600),var(--gold-700));
   color:#2a1f08;

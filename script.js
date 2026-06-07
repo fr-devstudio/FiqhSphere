@@ -282,6 +282,42 @@
   }, {threshold:.12});
   document.querySelectorAll('.scroll-reveal').forEach(el => io.observe(el));
 
+  /* ===== Pane navigation (prev / next) ===== */
+  (function(){
+    var ORDER = ['mercu','objektif','peristiwa','video','slide','rukun','syarat','batal','hikmah','waktu','tambahan'];
+    var LABELS = {mercu:'Mercu Kejayaan',objektif:'Objektif',peristiwa:'Peristiwa Solat',video:'Video',slide:'Slide Nota',rukun:'Rukun',syarat:'Syarat Solat',batal:'Perkara Batal',hikmah:'Hikmah & Akibat',waktu:'Waktu Solat',tambahan:'Info Tambahan'};
+    var total = ORDER.length;
+
+    function goTab(id){
+      solatTabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab === id); });
+      solatPanes.forEach(function(p){ p.classList.toggle('active', p.id === 'pane-'+id); });
+      document.querySelector('.solat-tabs').scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+
+    ORDER.forEach(function(tabId, idx){
+      var pane = document.getElementById('pane-'+tabId);
+      if(!pane) return;
+      var prev = idx > 0 ? ORDER[idx-1] : null;
+      var next = idx < total-1 ? ORDER[idx+1] : null;
+      var nav = document.createElement('div');
+      nav.className = 'pane-nav';
+      nav.innerHTML =
+        '<button class="pane-nav-btn prev"'+(prev ? '' : ' disabled')+' data-to="'+(prev||'')+'">'+
+          '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>'+
+          (prev ? LABELS[prev] : '—')+
+        '</button>'+
+        '<div class="pane-nav-pos"><span class="pnp-num">'+(idx+1)+' / '+total+'</span>'+LABELS[tabId]+'</div>'+
+        '<button class="pane-nav-btn next"'+(next ? '' : ' disabled')+' data-to="'+(next||'')+'">'+
+          (next ? LABELS[next] : 'Tamat')+
+          '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>'+
+        '</button>';
+      nav.querySelectorAll('.pane-nav-btn:not([disabled])').forEach(function(btn){
+        btn.addEventListener('click', function(){ goTab(btn.dataset.to); });
+      });
+      pane.appendChild(nav);
+    });
+  })();
+
   /* ===== Live waktu solat indicator ===== */
   function updateNowWaktu(){
     const h = new Date().getHours();

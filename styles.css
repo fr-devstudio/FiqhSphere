@@ -601,7 +601,7 @@ main{min-height:80vh}
   transition:max-height .3s ease, padding .3s ease;
   padding:0 24px;
 }
-.rukun.open .rukun-b{max-height:1000px;padding:0 24px 22px 72px}
+.rukun.open .rukun-b{max-height:3000px;padding:0 24px 22px 72px}
 .rukun-b p{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
 .rukun-bacaan{
   margin-top:14px;padding:16px 20px;

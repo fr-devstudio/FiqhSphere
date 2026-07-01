@@ -84,6 +84,13 @@
     h.parentElement.classList.toggle('open');
   }));
 
+  /* ===== Audio players — pause bg music + only one plays at a time ===== */
+  const audioPlayers = document.querySelectorAll('.audio-player');
+  audioPlayers.forEach(a => a.addEventListener('play', () => {
+    pauseMusic();
+    audioPlayers.forEach(other => { if(other !== a && !other.paused) other.pause(); });
+  }));
+
   /* ===== Quiz ===== */
   const QUIZ = [
     {q:'Berapakah jumlah rukun solat?', opts:['11','12','13','14'], a:2,
@@ -284,8 +291,8 @@
 
   /* ===== Pane navigation (prev / next) ===== */
   (function(){
-    var ORDER = ['mercu','objektif','peristiwa','video','slide','rukun','syarat','batal','hikmah','waktu','tambahan'];
-    var LABELS = {mercu:'Mercu Kejayaan',objektif:'Objektif',peristiwa:'Peristiwa Solat',video:'Video',slide:'Slide Nota',rukun:'Rukun',syarat:'Syarat Solat',batal:'Perkara Batal',hikmah:'Hikmah & Akibat',waktu:'Waktu Solat',tambahan:'Info Tambahan'};
+    var ORDER = ['mercu','objektif','peristiwa','video','slide','rukun','audio','syarat','batal','hikmah','waktu','tambahan'];
+    var LABELS = {mercu:'Mercu Kejayaan',objektif:'Objektif',peristiwa:'Peristiwa Solat',video:'Video',slide:'Slide Nota',rukun:'Rukun',audio:'Audio',syarat:'Syarat Solat',batal:'Perkara Batal',hikmah:'Hikmah & Akibat',waktu:'Waktu Solat',tambahan:'Info Tambahan'};
     var total = ORDER.length;
 
     function goTab(id){

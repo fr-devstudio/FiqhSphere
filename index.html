@@ -169,6 +169,7 @@
           <button class="solat-tab" data-tab="video"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Video Pengajaran</button>
           <button class="solat-tab" data-tab="slide"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Slide Nota</button>
           <button class="solat-tab" data-tab="rukun"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>Rukun Solat</button>
+          <button class="solat-tab" data-tab="audio"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>Audio</button>
           <button class="solat-tab" data-tab="syarat"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Syarat Solat</button>
           <button class="solat-tab" data-tab="batal"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>Perkara Membatalkan</button>
           <button class="solat-tab" data-tab="hikmah"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>Hikmah &amp; Akibat</button>
@@ -579,6 +580,205 @@
                     <p>Melakukan setiap rukun mengikut urutan yang betul tanpa mendahulukan yang kemudian. Solat terbatal jika rukun dilakukan secara terbalik dengan sengaja.</p>
                   </div>
                 </div>
+
+            </div>
+          </div>
+
+          <div class="solat-pane" id="pane-audio">
+            <p class="pane-desc">Dengar bacaan bagi setiap rukun dan sunat solat mengikut turutan sebenar dari niat hingga tertib.</p>
+            <div class="audio-list">
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">01</span>
+                  <span class="audio-badge rukun">Rukun 1</span>
+                  <span class="audio-t">Niat</span>
+                </div>
+                <div class="audio-sub-list">
+                  <div class="audio-sub">
+                    <span class="audio-sub-label">Subuh</span>
+                    <audio class="audio-player" controls preload="none"><source src="audio/Niat Solat Subuh.mp3" type="audio/mpeg"></audio>
+                  </div>
+                  <div class="audio-sub">
+                    <span class="audio-sub-label">Zohor</span>
+                    <audio class="audio-player" controls preload="none"><source src="audio/Niat Solat Zohor.mp3" type="audio/mpeg"></audio>
+                  </div>
+                  <div class="audio-sub">
+                    <span class="audio-sub-label">Asar</span>
+                    <audio class="audio-player" controls preload="none"><source src="audio/Niat Solat Asar.mp3" type="audio/mpeg"></audio>
+                  </div>
+                  <div class="audio-sub">
+                    <span class="audio-sub-label">Maghrib</span>
+                    <audio class="audio-player" controls preload="none"><source src="audio/Niat Solat Maghrib.mp3" type="audio/mpeg"></audio>
+                  </div>
+                  <div class="audio-sub">
+                    <span class="audio-sub-label">Isyak</span>
+                    <audio class="audio-player" controls preload="none"><source src="audio/Niat Solat Isya.mp3" type="audio/mpeg"></audio>
+                  </div>
+                </div>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">02</span>
+                  <span class="audio-badge rukun">Rukun 2</span>
+                  <span class="audio-t">Berdiri Tegak</span>
+                </div>
+                <div class="audio-empty">Tiada audio bagi rukun ini</div>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">03</span>
+                  <span class="audio-badge rukun">Rukun 3</span>
+                  <span class="audio-t">Takbiratul Ihram</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Takbiratul Ihram.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">04</span>
+                  <span class="audio-badge sunat">Sunat</span>
+                  <span class="audio-t">Doa Iftitah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Doa Iftitah.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">05</span>
+                  <span class="audio-badge rukun">Rukun 4</span>
+                  <span class="audio-t">Membaca Al-Fatihah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Al Fatihah.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">06</span>
+                  <span class="audio-badge sunat">Sunat</span>
+                  <span class="audio-t">Membaca Surah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/06-membaca-surah.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">07</span>
+                  <span class="audio-badge rukun">Rukun 5</span>
+                  <span class="audio-t">Rukuk serta Tuma'ninah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Bacaan Rukuk.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">08</span>
+                  <span class="audio-badge rukun">Rukun 6</span>
+                  <span class="audio-t">Iktidal serta Tuma'ninah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Iktidal.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">09</span>
+                  <span class="audio-badge rukun">Rukun 7</span>
+                  <span class="audio-t">Sujud serta Tuma'ninah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Bacaan Sujud.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">10</span>
+                  <span class="audio-badge rukun">Rukun 8</span>
+                  <span class="audio-t">Duduk antara Dua Sujud</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Duduk antara 2 Sujud.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">11</span>
+                  <span class="audio-badge sunat">Sunat</span>
+                  <span class="audio-t">Tasyahud Awal</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Tasyahud Awal.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">12</span>
+                  <span class="audio-badge rukun">Rukun 9</span>
+                  <span class="audio-t">Duduk Tahiyat Akhir</span>
+                </div>
+                <div class="audio-empty">Tiada audio bagi rukun ini</div>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">13</span>
+                  <span class="audio-badge rukun">Rukun 10</span>
+                  <span class="audio-t">Membaca Tasyahud Akhir</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Tasyahud Akhir.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">14</span>
+                  <span class="audio-badge rukun">Rukun 11</span>
+                  <span class="audio-t">Selawat ke atas Nabi Muhammad SAW</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Selawat.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">15</span>
+                  <span class="audio-badge sunat">Sunat</span>
+                  <span class="audio-t">Selawat Ibrahimiyah</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Selawat Ibrahimiyah.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">16</span>
+                  <span class="audio-badge rukun">Rukun 12</span>
+                  <span class="audio-t">Memberi Salam Pertama</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Salam Pertama.mp3" type="audio/mpeg"></audio>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">17</span>
+                  <span class="audio-badge sunat">Sunat</span>
+                  <span class="audio-t">Memberi Salam Kedua</span>
+                </div>
+                <div class="audio-empty">Tiada audio bagi rukun ini</div>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">18</span>
+                  <span class="audio-badge rukun">Rukun 13</span>
+                  <span class="audio-t">Tertib</span>
+                </div>
+                <div class="audio-empty">Tiada audio bagi rukun ini</div>
+              </div>
+
+              <div class="audio-item">
+                <div class="audio-item-head">
+                  <span class="audio-n">19</span>
+                  <span class="audio-badge sunat">Sunat</span>
+                  <span class="audio-t">Doa Qunut</span>
+                </div>
+                <audio class="audio-player" controls preload="none"><source src="audio/Doa Qunut.mp3" type="audio/mpeg"></audio>
+              </div>
 
             </div>
           </div>

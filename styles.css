@@ -628,6 +628,32 @@ main{min-height:80vh}
   font-size:11px;color:var(--emerald-800);font-weight:600;letter-spacing:.03em;
 }
 
+/* Audio list */
+.audio-list{display:grid;gap:10px}
+.audio-item{
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:var(--radius);padding:18px 24px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.audio-item-head{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.audio-n{font-family:var(--font-mono);font-size:13px;font-weight:600;color:var(--gold-700);width:26px;flex-shrink:0}
+.audio-badge{
+  display:inline-block;padding:3px 10px;border-radius:999px;flex-shrink:0;
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+}
+.audio-badge.rukun{background:rgba(10,91,64,.1);color:var(--emerald-800)}
+.audio-badge.sunat{background:rgba(220,192,122,.25);color:var(--gold-700)}
+.audio-t{flex:1;font-weight:600;font-size:15.5px;color:var(--emerald-900);min-width:180px}
+.audio-player{width:100%;height:38px}
+.audio-empty{font-size:13px;color:var(--ink-mute);font-style:italic}
+.audio-sub-list{display:grid;gap:10px;padding-left:44px}
+.audio-sub{display:flex;align-items:center;gap:14px}
+.audio-sub-label{
+  font-size:12.5px;font-weight:600;color:var(--emerald-700);
+  width:70px;flex-shrink:0;
+}
+.audio-sub .audio-player{flex:1}
+
 /* Two-column lists (syarat, batal, hikmah, akibat) */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .list-card{

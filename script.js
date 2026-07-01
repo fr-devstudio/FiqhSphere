@@ -84,6 +84,11 @@
     h.parentElement.classList.toggle('open');
   }));
 
+  /* ===== Audio accordion ===== */
+  document.querySelectorAll('.audio-h').forEach(h => h.addEventListener('click', () => {
+    h.parentElement.classList.toggle('open');
+  }));
+
   /* ===== Audio players — pause bg music + only one plays at a time ===== */
   const audioPlayers = document.querySelectorAll('.audio-player');
   audioPlayers.forEach(a => a.addEventListener('play', () => {
